@@ -1,5 +1,4 @@
 // get time
-
 const clock = document.querySelector('.clock');
 
 function getTime(){
@@ -18,7 +17,7 @@ function TimeLoad(){
 TimeLoad();
 
 // name 
-const form = document.querySelector('#name-box');
+const form = document.querySelector('#name-form');
 const input = document.querySelector('.name');
 const greeting = document.querySelector('.greeting');
 
@@ -60,3 +59,58 @@ function nameLoad(){
 }
 
 nameLoad();
+
+// to do list
+const listForm = document.querySelector("#list-form");
+const listInput = document.querySelector(".list");
+const list = document.querySelector(".list-box");
+
+const willDo = 'I will do';
+
+const arrayTodos = [];
+
+function saveTodos(){
+    localStorage.setItem(willDo,JSON.stringify(arrayTodos));
+}
+
+function plusList(text){
+    const li = document.createElement("li");
+    const delBtn = document.createElement("button");
+    delBtn.innerText = "Delete";
+    const span = document.createElement("span");
+    span.innerText = text;
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    li.id = arrayTodos.length+1;
+    list.appendChild(li);
+    const toDoObj ={
+        text:text,
+        id:arrayTodos.length+1
+    };
+    arrayTodos.push(toDoObj);
+    saveTodos();
+}
+
+function handleSubmit2(event){
+    event.preventDefault();
+    const listByText = listInput.value;
+    plusList(listByText);
+   listInput.value = "";
+}
+
+function loadToDoList(){
+    const toDos = localStorage.getItem(willDo);
+    if(toDos !==null){
+        const parsedTodos = JSON.parse(toDos);
+        parsedTodos.forEach(function(toDo){
+            plusList(toDo.text);
+        });
+    };
+}
+
+function addToList(){
+    loadToDoList();
+    listForm.addEventListener('submit',handleSubmit2);
+}
+
+addToList();
