@@ -67,7 +67,19 @@ const list = document.querySelector(".list-box");
 
 const willDo = 'I will do';
 
-const arrayTodos = [];
+let arrayTodos = [];
+
+
+function deleteTodo(event){
+    const btn = event.target;
+    const parentOfBtn = btn.parentNode;
+    list.removeChild(parentOfBtn);
+    const cleanToDos=arrayTodos.filter(function(toDo){
+        return toDo.id !== parseInt(parentOfBtn.id);
+    });
+    arrayTodos = cleanToDos;
+    saveTodos();
+}
 
 function saveTodos(){
     localStorage.setItem(willDo,JSON.stringify(arrayTodos));
@@ -78,6 +90,7 @@ function plusList(text){
     const delBtn = document.createElement("button");
     delBtn.innerText = "Delete";
     const span = document.createElement("span");
+    delBtn.addEventListener("click",deleteTodo);
     span.innerText = text;
     li.appendChild(span);
     li.appendChild(delBtn);
