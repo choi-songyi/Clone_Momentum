@@ -40,11 +40,6 @@ body {
 }
 
 .greeting {
-  display: block;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  width: 300px;
-  padding: 10px;
   font-size: 2em;
   letter-spacing: 3px;
 }
