@@ -1,12 +1,36 @@
 * {
   margin: 0 auto;
   padding: 0;
+  color: #fff;
+  text-align: center;
 }
 
 body {
   width: 100%;
 }
+/* clock */
+#clock-box {
+  font-size: 3rem;
+  letter-spacing: 10px;
+  margin-top: 100px;
+  padding: 3rem;
+}
 
+/* name */
+.name {
+  border: none;
+  opacity: 0.5;
+  border-radius: 7px;
+  padding: 0.3rem;
+  margin: 0.5rem;
+  width: 20rem;
+}
+
+.name:focus {
+  outline-style: none;
+  opacity: 1;
+  color: #333;
+}
 .form,
 .greeting {
   display: none;
@@ -15,6 +39,65 @@ body {
   display: block;
 }
 
+.greeting {
+  display: block;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  width: 300px;
+  padding: 10px;
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+/* to do list */
+.list {
+  border: none;
+  opacity: 0.5;
+  border-radius: 7px;
+  padding: 0.3rem;
+  margin: 3rem 0.5rem 1rem 0.5rem;
+  width: 20rem;
+}
+
+.list:focus {
+  outline-style: none;
+  opacity: 1;
+  color: #333;
+}
+
+.list-box li {
+  list-style: none;
+  padding: 5px;
+  width: 20rem;
+  animation: fadeIn 0.5s linear;
+}
+.list-box span {
+}
+.list-box li button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 3px;
+  border-radius: 10%;
+  opacity: 70%;
+  margin: 0 10px;
+}
+.list-box li button:hover {
+  opacity: 1;
+}
+
+/* weather */
+.weather {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  opacity: 0.5;
+}
+
+/* background */
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -6,7 +6,7 @@ function getTime(){
     const minute = date.getMinutes();
     const hour = date.getHours();
     const second = date.getSeconds();
-    clock.innerText =`${hour < 10 ? `0${hour}`: hour}:${minute < 10 ? `${minute}`: minute}:${second < 10 ? `0${second}`: second}`
+    clock.innerText =`${hour < 10 ? `0${hour}`: hour}:${minute < 10 ? `0${minute}`: minute}:${second < 10 ? `0${second}`: second}`
 }
 
 function TimeLoad(){
@@ -88,7 +88,7 @@ function saveTodos(){
 function plusList(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
-    delBtn.innerText = "Delete";
+    delBtn.innerText = "X";
     const span = document.createElement("span");
     delBtn.addEventListener("click",deleteTodo);
     span.innerText = text;
