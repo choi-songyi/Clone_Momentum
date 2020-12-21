@@ -66,8 +66,7 @@ body {
   width: 20rem;
   animation: fadeIn 0.5s linear;
 }
-.list-box span {
-}
+
 .list-box li button {
   background-color: #fff;
   color: #333;
