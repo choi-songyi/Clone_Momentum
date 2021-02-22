@@ -73,6 +73,7 @@ let arrayTodos = [];
 function deleteTodo(event){
     const btn = event.target;
     const parentOfBtn = btn.parentNode;
+
     list.removeChild(parentOfBtn);
     const cleanToDos=arrayTodos.filter(function(toDo){
         return toDo.id !== parseInt(parentOfBtn.id);
